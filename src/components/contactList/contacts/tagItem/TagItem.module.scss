@@ -1,0 +1,17 @@
+@import "../../../../styles/Mixin.scss";
+
+.main{
+    @include flexbox(row,center,center);
+    width: fit-content;
+    height: fit-content;
+    padding: 8px;
+    border-radius: 10px;
+    background: #f4f4f7;
+    box-shadow: inset 2px 2px 2px #dcdcde,
+            inset -2px -2px 2px #ffffff;
+
+    &>p{
+        font-size: 0.9em;
+        font-weight: 500;
+    }
+}
