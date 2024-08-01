@@ -1,0 +1,56 @@
+@import "../../../styles/Variables.scss";
+@import "../../../styles/Mixin.scss";
+
+.main {
+  @include boxShadow();
+  @include flexbox(column, start, start);
+  position: sticky;
+  top: 70px;
+  row-gap: 40px;
+  width: 20vw;
+  height: fit-content;
+  padding: 20px;
+  padding-bottom: 30px;
+  border-radius: 8px;
+  background-color: $bakcground-white;
+
+  .inputFiledContainer {
+    width: 100%;
+
+    & > h3 {
+      font-size: 1em;
+      font-weight: 500;
+    }
+  }
+
+  .submitButton {
+    width: 100%;
+    border-radius: 8px;
+    padding: 13px;
+    font-size: 1em;
+    font-weight: 500;
+    background-color: $accent-purple;
+    margin-top: 10px;
+    color: $gradient-white;
+    box-shadow: 5px 5px 6px #cbcbcd, -5px -5px 6px #ffffff;
+    cursor: pointer;
+    transition: 250ms all;
+
+    &:hover {
+      box-shadow: 3px 3px 4px #c1c1c3, -3px -3px 4px #ffffff;
+    }
+
+    &:active {
+      box-shadow: inset 7px 7px 10px #6e56b9, inset -7px -7px 10px #9876ff;
+    }
+  }
+}
+
+@media (max-width: 1248px) {
+  .main {
+    width: 280px;
+    padding:10px;
+    position: static;
+    row-gap: 20px;
+  }
+}

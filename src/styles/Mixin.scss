@@ -1,0 +1,17 @@
+@import "./Variables.scss";
+
+@mixin backgroundGradient() {
+    background: linear-gradient(135deg, $gradient-white 0%, $gradient-blue 100%);
+}
+@mixin boxShadow() {
+    box-shadow:  7px 7px 10px #cbcbcd,
+    -7px -7px 10px #ffffff;
+
+}
+
+@mixin flexbox($direction, $jc-position, $ai-position) {
+    display: flex;
+    justify-content: $jc-position;
+    align-items: $ai-position;
+    flex-direction: $direction;
+  }

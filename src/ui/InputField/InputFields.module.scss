@@ -1,0 +1,34 @@
+@import "../../styles/Mixin.scss";
+@import "../../styles/Variables.scss";
+
+.inputForm {
+  height: 50px;
+
+  & > input {
+    width: 100%;
+    height: 30px;
+    height: 40px;
+    margin-top: 10px;
+    border-radius: 8px;
+    padding: 5px 12px 5px 12px;
+    background: $bakcground-white;
+    box-shadow: inset 5px 5px 7px #e5e5e8, inset -5px -5px 7px #ffffff;
+    font-size: 1.1em;
+    font-weight: 500;
+    transition: all 250ms;
+
+    &:focus {
+        box-shadow: inset 7px 7px 5px #cbcbcd,
+        inset -7px -7px 5px #ffffff;
+
+    }
+  }
+
+  & > p {
+    padding-left: 5px;
+    padding-top: 5px;
+    font-size: 0.9em;
+    font-weight: 400;
+    color: red;
+  }
+}
