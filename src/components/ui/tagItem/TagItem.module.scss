@@ -1,4 +1,4 @@
-@import "../../../../styles/Mixin.scss";
+@import "../../../styles/Mixin.scss";
 
 .main{
     @include flexbox(row,center,center);

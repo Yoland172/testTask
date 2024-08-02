@@ -14,6 +14,10 @@
         padding: 20px;
         background-color: $bakcground-white;
 
+        &>h2{
+            color: $accent-purple
+        }
+
         .contacts{
             @include flexbox(column, start,start);
             padding-top: 20px;
