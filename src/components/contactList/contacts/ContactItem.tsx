@@ -1,32 +1,39 @@
-import CloseIcon from '../../../ui/icon/CloseIcon'
+import { TagItem as TagItemType } from '../../../lib/types/types'
+import CloseIcon from '../../ui/icon/CloseIcon'
 import styles from './ContactItem.module.scss'
 import TagItem from './tagItem/TagItem'
 
-const ContactItem = () => {
+interface ContactItem {
+  avatar_url:string,
+  email:string,
+  firstName?: string,
+  lastName?:string,
+  tags:TagItemType[],
+  deleteContact:() =>void
+  isLoading?:boolean
+}
+
+const ContactItem = ({isLoading,avatar_url, email, firstName,lastName,tags,deleteContact}:ContactItem) => {
   return (
     <div className={styles.main}>
-      <div className={styles.imageContainer}></div>
+        <img src={avatar_url} alt="user avatar" className={styles.imageContainer}/>
       <div className={styles.userInfoContainer}>
         <div className={styles.userNameContainer}>
-            <h3>Volodya</h3>
-            <h3>Muchkailuk</h3>
+            <h3>{firstName}</h3>
+            <h3>{lastName}</h3>
         </div>
-        <p className={styles.userEmail}>volodvolodimer@gmail.com</p>
+        <p className={styles.userEmail}>{email}</p>
 
         <div className={styles.tagContainer}>
-            <TagItem/>
-            <TagItem/>
-            <TagItem/>
-            <TagItem/>
-            <TagItem/>
-            <TagItem/>
-            <TagItem/>
-            <TagItem/>
-            <TagItem/>
+    {
+      tags.length > 0 && tags.map(el => {
+        return <TagItem title={el.tag} key={el.id}/>
+      })
+    }
         </div>
       </div>
-      <div className={styles.closeButtonContainer}>
-        <button><CloseIcon width={20} height={20}/></button>
+      <div className={styles.deleteButtonContainer}>
+        <button onClick={deleteContact} disabled={isLoading}><CloseIcon width={20} height={20}/></button>
       </div>
     </div>
   )

@@ -15,6 +15,13 @@
 
   .imageContainer {
     grid-area: 1 / 1 / 2 / 3;
+
+    width: 80%;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    margin-left: 20px;
+    box-shadow:  4px 4px 4px #d2d2d4,
+    -4px -4px 4px #ffffff;
   }
 
   .userInfoContainer {
@@ -40,7 +47,7 @@
     }
   }
 
-  .closeButtonContainer {
+  .deleteButtonContainer {
     grid-area: 1 / 9 / 2 / 10;
 
     padding: 30px;
