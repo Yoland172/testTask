@@ -14,6 +14,10 @@
   border-radius: 8px;
   background-color: $bakcground-white;
 
+  &>h2{
+    color: $accent-purple;
+  }
+
   .inputFiledContainer {
     width: 100%;
 

@@ -16,7 +16,7 @@ const ContactList = ({
   addContact,
   isAdding,
   deleteContact,
-  isDeleting
+  isDeleting,
 }: ContactListProps) => {
   return (
     <div className={styles.main}>
@@ -28,8 +28,10 @@ const ContactList = ({
             contacts.map((el) => {
               return (
                 <ContactItem
+                key={el.id}
+                id={el.id}
                   avatar_url={el.avatar_url}
-                  email={el.fields.email[0].value}
+                  email={el.fields.email ? el.fields.email[0].value : ""}
                   firstName={
                     el.fields["first name"]
                       ? el.fields["first name"][0].value
@@ -41,9 +43,9 @@ const ContactList = ({
                       : ""
                   }
                   tags={el.tags}
-                  key={el.id}
+               
                   deleteContact={() => {
-                    console.log('test');
+                    console.log("test");
                     deleteContact(el.id);
                   }}
                   isLoading={isDeleting}

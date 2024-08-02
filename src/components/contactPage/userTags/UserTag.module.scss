@@ -1,0 +1,35 @@
+@import "../../../styles/Mixin.scss";
+@import "../../../styles/Variables.scss";
+
+.main {
+  padding-top: 30px;
+
+  & > h2 {
+    color: $accent-purple;
+  }
+
+  .tagContainer {
+    display: flex;
+    column-gap: 15px;
+    padding-top: 20px;
+  }
+
+  .tag {
+    @include flexbox(row, center, center);
+    width: fit-content;
+    height: fit-content;
+    padding: 10px;
+    border-radius: 10px;
+    background: $purple-white;
+
+    box-shadow:   -3px -3px 3px #ffffff ,3px 3px 3px #dcdcde;
+
+    & > p {
+      font-size: 1em;
+      font-weight: 500; 
+      color: $bakcground-white;
+      letter-spacing: .5px;
+
+    }
+  }
+}

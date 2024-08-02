@@ -1,0 +1,21 @@
+@import "../../styles/Mixin.scss";
+@import "../../styles/Variables.scss";
+
+.main {
+  @include flexbox(row, center, center);
+  width: 100%;
+  padding-top: 100px;
+  padding-bottom: 100px;
+
+  .userContainer {
+    @include boxShadow();
+
+    width: 100%;
+    padding: 30px 40px;
+    max-width: 1000px;
+    min-width: 400px;
+    height: fit-content;
+    background-color: $bakcground-white;
+    border-radius: 8px;
+  }
+}

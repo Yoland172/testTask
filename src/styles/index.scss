@@ -42,10 +42,16 @@ ul {
   padding-left: 0;
 }
 
-input {
+input,textarea {
     border: none;
     font-family: "Roboto", sans-serif;
     color:$black;
+    outline: none;
+}
+
+textarea {
+  resize: none;
+
 }
 
 button{
