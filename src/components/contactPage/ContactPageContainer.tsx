@@ -1,18 +1,12 @@
-import { useParams } from "react-router-dom"
-import ContactPage from "./ContactPage"
-import { useEffect } from "react";
+import { useParams } from "react-router-dom";
+import ContactPage from "./ContactPage";
+import { useGetContactInfoQuery } from "../../store/api/contactInfo";
 
 const ContactPageContainer = () => {
-    const id = useParams().id;
+  const id = useParams().id;
+  const { data } = useGetContactInfoQuery(id ? id : "");
 
-    useEffect(() => {
-        console.log(id);
-    },[id])
+  return <ContactPage userInfo={data?.resources[0]}/>;
+};
 
-
-  return (
-    <ContactPage/>
-  )
-}
-
-export default ContactPageContainer
+export default ContactPageContainer;
