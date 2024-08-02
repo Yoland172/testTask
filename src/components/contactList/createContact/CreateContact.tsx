@@ -1,19 +1,28 @@
 import { useForm } from "react-hook-form";
-import InputField from "../../../ui/InputField/InputField";
 import styles from "./CreateContact.module.scss";
 import { CreateContactInputs } from "../../../lib/types/types";
+import { useEffect } from "react";
+import InputField from "../../ui/InputField/InputField";
+import Loader from "../../ui/loader/Loader";
 
 interface CreateContactProps {
-  addContact: (userInfo:CreateContactInputs) => void
+  addContact: (userInfo:CreateContactInputs) => void;
+  isLoading?:boolean
 }
 
 
-const CreateContact = ({addContact}:CreateContactProps) => {
+const CreateContact = ({addContact,isLoading}:CreateContactProps) => {
+
+  useEffect(() => {
+    console.log(isLoading)
+  },[isLoading])
+
   const {
     register,
     handleSubmit,
     setError,
     clearErrors,
+    setValue,
     formState: { errors },
   } = useForm<CreateContactInputs>({});
 
@@ -31,6 +40,9 @@ const CreateContact = ({addContact}:CreateContactProps) => {
       clearErrors("firstName");
       clearErrors("lastName");
       addContact(data);
+      setValue("firstName", '', { shouldValidate: false });
+      setValue("lastName", '', { shouldValidate: false });
+      setValue("email", '', { shouldValidate: false });
     }   
 
   };
@@ -76,7 +88,7 @@ const CreateContact = ({addContact}:CreateContactProps) => {
         />
       </div>
 
-      <button className={styles.submitButton}>Add Contact</button>
+      <button className={styles.submitButton} disabled={isLoading}>{isLoading ? <Loader/> : "Add Contact"}</button>
     </form>
   );
 };

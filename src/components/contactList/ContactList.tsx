@@ -5,13 +5,22 @@ import CreateContact from "./createContact/CreateContact";
 
 interface ContactListProps {
   contacts?: ResourcesItem[];
-  addContact: (userInfo:CreateContactInputs) => void
+  addContact: (userInfo: CreateContactInputs) => void;
+  isAdding?: boolean;
+  isDeleting?: boolean;
+  deleteContact: (id: string) => void;
 }
 
-const ContactList = ({ contacts,addContact }: ContactListProps) => {
+const ContactList = ({
+  contacts,
+  addContact,
+  isAdding,
+  deleteContact,
+  isDeleting
+}: ContactListProps) => {
   return (
     <div className={styles.main}>
-      <CreateContact  addContact={addContact}/>
+      <CreateContact addContact={addContact} isLoading={isAdding} />
       <div className={styles.contactsContainer}>
         <h2>Contacts</h2>
         <div className={styles.contacts}>
@@ -33,6 +42,11 @@ const ContactList = ({ contacts,addContact }: ContactListProps) => {
                   }
                   tags={el.tags}
                   key={el.id}
+                  deleteContact={() => {
+                    console.log('test');
+                    deleteContact(el.id);
+                  }}
+                  isLoading={isDeleting}
                 />
               );
             })}

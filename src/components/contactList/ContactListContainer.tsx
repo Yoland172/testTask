@@ -1,14 +1,15 @@
 import { CreateContactInputs, Fields } from "../../lib/types/types";
 import {
   useAddContactMutation,
+  useDeleteContactMutation,
   useGetContactsQuery,
 } from "../../store/api/contacts";
 import ContactList from "./ContactList";
 
 const ContactListContainer = () => {
   const { data } = useGetContactsQuery();
-
-  const [addContact, { isLoading }] = useAddContactMutation();
+  const [addContact, { isLoading: isAdding }] = useAddContactMutation();
+  const [deleteContact, {isLoading: isDeleting}] = useDeleteContactMutation();
 
   const handleAddContact = async ({
     email,
@@ -43,7 +44,13 @@ const ContactListContainer = () => {
     await addContact(fields).unwrap();
   };
   return (
-    <ContactList contacts={data?.resources} addContact={handleAddContact} />
+    <ContactList
+      contacts={data?.resources}
+      addContact={handleAddContact}
+      isAdding={isAdding}
+      isDeleting={isDeleting}
+      deleteContact={deleteContact}
+    />
   );
 };
 

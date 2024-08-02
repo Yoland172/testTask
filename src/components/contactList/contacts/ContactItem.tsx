@@ -1,5 +1,5 @@
 import { TagItem as TagItemType } from '../../../lib/types/types'
-import CloseIcon from '../../../ui/icon/CloseIcon'
+import CloseIcon from '../../ui/icon/CloseIcon'
 import styles from './ContactItem.module.scss'
 import TagItem from './tagItem/TagItem'
 
@@ -8,10 +8,12 @@ interface ContactItem {
   email:string,
   firstName?: string,
   lastName?:string,
-  tags:TagItemType[]
+  tags:TagItemType[],
+  deleteContact:() =>void
+  isLoading?:boolean
 }
 
-const ContactItem = ({avatar_url, email, firstName,lastName,tags}:ContactItem) => {
+const ContactItem = ({isLoading,avatar_url, email, firstName,lastName,tags,deleteContact}:ContactItem) => {
   return (
     <div className={styles.main}>
         <img src={avatar_url} alt="user avatar" className={styles.imageContainer}/>
@@ -30,8 +32,8 @@ const ContactItem = ({avatar_url, email, firstName,lastName,tags}:ContactItem) =
     }
         </div>
       </div>
-      <div className={styles.closeButtonContainer}>
-        <button><CloseIcon width={20} height={20}/></button>
+      <div className={styles.deleteButtonContainer}>
+        <button onClick={deleteContact} disabled={isLoading}><CloseIcon width={20} height={20}/></button>
       </div>
     </div>
   )
