@@ -1,9 +1,13 @@
 import styles from "./TagItem.module.scss";
 
-const TagItem = () => {
+interface TagItemProps{
+  title:string
+}
+
+const TagItem = ({title}:TagItemProps) => {
   return (
     <div className={styles.main}>
-      <p>some</p>
+      <p>{title}</p>
     </div>
   )
 }

@@ -2,6 +2,7 @@
 import styles from './InputFields.module.scss';
 
 interface InputFieldProps {
+  registerReq:any
     type:string
     placeholder?:string
     error:any;
@@ -9,14 +10,15 @@ interface InputFieldProps {
     
 }
 
-function InputField({type,placeholder,error,maxLength}:InputFieldProps) {
+function InputField({type,placeholder,error,maxLength,registerReq}:InputFieldProps) {
   return (
     <div className={styles.inputForm}>
       <input type={type}
+      {...registerReq}
       placeholder={placeholder}
       maxLength={maxLength}
       />
-      {error && <p className={styles.errorMesage}>{error.mesage}</p>} 
+      {error && <p className={styles.errorMesage}>{error.message}</p>} 
     </div>
   )
 }
