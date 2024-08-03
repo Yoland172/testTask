@@ -5,10 +5,9 @@ export const contactsApi = createApi({
   reducerPath: "contactsApi",
   tagTypes: ["Contacts"],
   baseQuery: fetchBaseQuery({
-    baseUrl:
-      "https://cors-anywhere.herokuapp.com/https://live.devnimble.com/api/v1/",
+    baseUrl: `${import.meta.env.VITE_BASE_URL}`,
     headers: {
-      Authorization: `Bearer VlP9cwH6cc7Kg2LsNPXpAvF6QNmgZn`,
+      Authorization: `${import.meta.env.VITE_TOKEN}`,
     },
   }),
   endpoints: (build) => ({
@@ -17,7 +16,10 @@ export const contactsApi = createApi({
       providesTags: (result) =>
         result?.resources
           ? [
-              ...result.resources.map(({ id }) => ({ type: "Contacts" as const, id })),
+              ...result.resources.map(({ id }) => ({
+                type: "Contacts" as const,
+                id,
+              })),
               { type: "Contacts", id: "LIST" },
             ]
           : [{ type: "Contacts", id: "LIST" }],
@@ -36,16 +38,20 @@ export const contactsApi = createApi({
           fields,
         },
       }),
-      invalidatesTags: [{type:'Contacts', id:"LIST"}]
+      invalidatesTags: [{ type: "Contacts", id: "LIST" }],
     }),
-    deleteContact: build.mutation<void,string>({
+    deleteContact: build.mutation<void, string>({
       query: (id) => ({
-        url:`contact/${id}`,
-        method: "DELETE"
+        url: `contact/${id}`,
+        method: "DELETE",
       }),
-      invalidatesTags: [{type:'Contacts', id:"LIST"}]
-    })
+      invalidatesTags: [{ type: "Contacts", id: "LIST" }],
+    }),
   }),
 });
 
-export const { useGetContactsQuery, useAddContactMutation, useDeleteContactMutation } = contactsApi;
+export const {
+  useGetContactsQuery,
+  useAddContactMutation,
+  useDeleteContactMutation,
+} = contactsApi;
