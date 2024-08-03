@@ -13,5 +13,4 @@ export const transformApiData = (data: ResourcesItem[]): ContactItemType[] => {
       tags: el.tags,
     };
   });
-
 };

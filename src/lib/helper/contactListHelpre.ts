@@ -8,7 +8,6 @@ export const contactInfoCombiner = (
   const fields: Fields = {
     email: [{ value: email, modifier: "", label: "email", is_primary: false }],
   };
-
   if (firstName) {
     fields["first name"] = [
       {
@@ -19,7 +18,6 @@ export const contactInfoCombiner = (
       },
     ];
   }
-
   if (lastName) {
     fields["last name"] = [
       { value: lastName, modifier: "", label: "last name", is_primary: false },
