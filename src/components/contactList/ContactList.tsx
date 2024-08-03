@@ -1,10 +1,10 @@
-import { CreateContactInputs, ResourcesItem } from "../../lib/types/types";
+import { ContactItemType, CreateContactInputs,  } from "../../lib/types/types";
 import styles from "./ContactList.module.scss";
 import ContactItem from "./contacts/ContactItem";
 import CreateContact from "./createContact/CreateContact";
 
 interface ContactListProps {
-  contacts?: ResourcesItem[];
+  contacts: ContactItemType[];
   addContact: (userInfo: CreateContactInputs) => void;
   isAdding?: boolean;
   isDeleting?: boolean;
@@ -28,24 +28,14 @@ const ContactList = ({
             contacts.map((el) => {
               return (
                 <ContactItem
-                key={el.id}
-                id={el.id}
+                  key={el.id}
+                  id={el.id}
                   avatar_url={el.avatar_url}
-                  email={el.fields.email ? el.fields.email[0].value : ""}
-                  firstName={
-                    el.fields["first name"]
-                      ? el.fields["first name"][0].value
-                      : ""
-                  }
-                  lastName={
-                    el.fields["last name"]
-                      ? el.fields["last name"][0].value
-                      : ""
-                  }
+                  email={el.email}
+                  firstName={el.firstName}
+                  lastName={el.lastName}
                   tags={el.tags}
-               
                   deleteContact={() => {
-                    console.log("test");
                     deleteContact(el.id);
                   }}
                   isLoading={isDeleting}

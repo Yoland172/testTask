@@ -5,8 +5,13 @@ import {
   useGetContactInfoQuery,
 } from "../../store/api/contactInfo";
 import { extractAndMergeTagsArray } from "../../lib/helper/contactInfoHelper";
+import { useEffect, useState } from "react";
+import { ContactItemType } from "../../lib/types/types";
+import { transformApiData } from "../../lib/helper/transformApiDataHelper";
 
 const ContactPageContainer = () => {
+  const [contactsState, setContactsState] = useState<ContactItemType[]>([]);
+
   const id = useParams().id;
   const { data } = useGetContactInfoQuery(id ? id : "");
   const [addTags, { isLoading }] = useAddTagsMutation();
@@ -20,9 +25,15 @@ const ContactPageContainer = () => {
     }
   };
 
+  useEffect(() => {
+    if (data) {
+      setContactsState(transformApiData(data.resources));
+    }
+  }, [data]);
+
   return (
     <ContactPage
-      userInfo={data?.resources[0]}
+      userInfo={contactsState[0]}
       addTags={handleAddTags}
       isLoading={isLoading}
     />

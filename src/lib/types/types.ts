@@ -45,3 +45,15 @@ export interface CreateContactInputs {
     lastName?: string;
     email: string;
   }
+
+
+
+
+  export interface ContactItemType {
+    id: string;
+    avatar_url: string;
+    email: string;
+    firstName: string;
+    lastName: string;
+    tags: TagItem[];
+  }

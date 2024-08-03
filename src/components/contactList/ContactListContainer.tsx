@@ -1,51 +1,39 @@
-import { CreateContactInputs, Fields } from "../../lib/types/types";
+import { useEffect, useState } from "react";
+import { ContactItemType, CreateContactInputs } from "../../lib/types/types";
 import {
   useAddContactMutation,
   useDeleteContactMutation,
   useGetContactsQuery,
 } from "../../store/api/contacts";
 import ContactList from "./ContactList";
+import { transformApiData } from "../../lib/helper/transformApiDataHelper";
+import { contactInfoCombiner } from "../../lib/helper/contactListHelpre";
 
 const ContactListContainer = () => {
+  const [contactsState, setContactsState] = useState<ContactItemType[]>([]);
+
   const { data } = useGetContactsQuery();
   const [addContact, { isLoading: isAdding }] = useAddContactMutation();
-  const [deleteContact, {isLoading: isDeleting}] = useDeleteContactMutation();
+  const [deleteContact, { isLoading: isDeleting }] = useDeleteContactMutation();
 
   const handleAddContact = async ({
     email,
     firstName,
     lastName,
   }: CreateContactInputs) => {
-    const fields: Fields = {
-      email: [
-        { value: email, modifier: "", label: "email", is_primary: false },
-      ],
-    };
-    if (firstName) {
-      fields["first name"] = [
-        {
-          value: firstName,
-          modifier: "",
-          label: "first name",
-          is_primary: false,
-        },
-      ];
-    }
-    if (lastName) {
-      fields["last name"] = [
-        {
-          value: lastName,
-          modifier: "",
-          label: "last name",
-          is_primary: false,
-        },
-      ];
-    }
+    const fields = contactInfoCombiner(email, firstName, lastName);
     await addContact(fields).unwrap();
   };
+
+  useEffect(() => {
+    if (data) {
+      setContactsState(transformApiData(data.resources));
+    }
+  }, [data]);
+
   return (
     <ContactList
-      contacts={data?.resources}
+      contacts={contactsState}
       addContact={handleAddContact}
       isAdding={isAdding}
       isDeleting={isDeleting}
