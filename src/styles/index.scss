@@ -68,3 +68,24 @@ input::-webkit-inner-spin-button {
 input[type="number"] {
   -moz-appearance: textfield;
 }
+
+
+.toast{
+  border-radius: 10px !important;
+  background-color: $bakcground-white !important;
+  box-shadow:  5px 5px 3px #bfbfc2,
+             -3px -3px 6px #ffffff !important;
+
+  .toastPropgressBar{
+    background: linear-gradient(
+        135deg,
+        rgba(198, 128, 209, 1) 0%,
+        rgba(131, 83, 241, 1) 100%
+      );
+
+
+  .Toastify__progress-bar--error{
+    background: $purple-white !important;
+  }
+}
+}
