@@ -5,9 +5,11 @@ import UserInfo from "./userInfo/UserInfo";
 import UserTags from "./userTags/UserTags";
 interface ContactPageProps {
   userInfo?: ResourcesItem;
+  addTags:(tags:string[]) =>void;
+  isLoading:boolean
 }
 
-const ContactPage = ({ userInfo }: ContactPageProps) => {
+const ContactPage = ({ userInfo,addTags,isLoading }: ContactPageProps) => {
   return (
     <div className={styles.main}>
       <div className={styles.userContainer}>
@@ -25,8 +27,8 @@ const ContactPage = ({ userInfo }: ContactPageProps) => {
               : ""
           }
         />
-        <UserTags />
-        <AddTags />
+        <UserTags tags={userInfo?.tags}/>
+        <AddTags addTags={addTags} isLoading={isLoading}/>
       </div>
     </div>
   );

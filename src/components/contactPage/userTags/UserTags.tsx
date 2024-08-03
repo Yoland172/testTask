@@ -1,28 +1,25 @@
-import styles from './UserTag.module.scss';
+import { TagItem } from "../../../lib/types/types";
+import styles from "./UserTag.module.scss";
 
-const UserTags = () => {
-  return (
-    <div className={styles.main}>
-        <h2>Tags</h2>
-        <div className={styles.tagContainer}>
-          <div className={styles.tag}>
-            <p>some</p>
-          </div>
-          <div className={styles.tag}>
-            <p>some</p>
-          </div>
-          <div className={styles.tag}>
-            <p>some</p>
-          </div>
-          <div className={styles.tag}>
-            <p>some</p>
-          </div>
-          <div className={styles.tag}>
-            <p>some</p>
-          </div>
-        </div>
-    </div>
-  )
+interface UserTagsProps {
+  tags?: TagItem[];
 }
 
-export default UserTags
+const UserTags = ({ tags }: UserTagsProps) => {
+  return (
+    <div className={styles.main}>
+      <h2>Tags</h2>
+      <div className={styles.tagContainer}>
+        {tags && tags.map((el) => {
+          return (
+            <div className={styles.tag} key={el.id}>
+              <p>{el.tag}</p>
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  );
+};
+
+export default UserTags;

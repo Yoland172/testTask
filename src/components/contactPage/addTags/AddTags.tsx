@@ -1,11 +1,31 @@
+import { useState } from "react";
 import styles from "./AddTags.module.scss";
+import Loader from "../../ui/loader/Loader";
 
-const AddTags = () => {
+interface AddTagsProps{
+  addTags:(tags:string[])=>void;
+  isLoading:boolean;
+}
+
+const AddTags = ({addTags,isLoading}:AddTagsProps) => {
+  const [tags, setTags] = useState<string>("");
+
+  const onSubmit = () => {
+    if (tags.length > 0) {
+      const tagArray = tags.trim().split(/\s+/);
+      addTags(tagArray);
+      setTags('');
+    }
+  };
+
   return (
     <div className={styles.main}>
-      <textarea>some</textarea>
+      <textarea
+        value={tags}
+        onChange={(e) => setTags(e.target.value)}
+      ></textarea>
       <div className={styles.buttonContainer}>
-        <button>Add Tag</button>
+        <button onClick={onSubmit}>{isLoading ? <Loader/> : "Add Tags"}</button>
       </div>
     </div>
   );
