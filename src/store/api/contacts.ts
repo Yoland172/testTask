@@ -12,7 +12,7 @@ export const contactsApi = createApi({
   }),
   endpoints: (build) => ({
     getContacts: build.query<IContactAPI, void>({
-      query: () => `contact?sort=created:desc`,
+      query: () => `contacts?sort=created:desc`,
       providesTags: (result) =>
         result?.resources
           ? [

@@ -14,7 +14,7 @@
   border-radius: 8px;
   background-color: $bakcground-white;
 
-  &>h2{
+  & > h2 {
     color: $accent-purple;
   }
 
@@ -33,7 +33,7 @@
     border-radius: 8px;
     font-size: 1em;
     font-weight: 500;
-    background-color: $accent-purple;
+    @include buttonBackgroundGradient();
     margin-top: 10px;
     color: $gradient-white;
     box-shadow: 5px 5px 6px #cbcbcd, -5px -5px 6px #ffffff;
@@ -45,16 +45,16 @@
     }
 
     &:active {
-      box-shadow: inset 7px 7px 10px #6e56b9, inset -7px -7px 10px #9876ff;
+      box-shadow: inset 6px 6px 4px #00000038, inset -6px -6px 4px #ffffff5b;
     }
-
   }
 }
 
 @media (max-width: 1248px) {
   .main {
-    width: 280px;
-    padding:10px;
+    max-width: 600px;
+    width: 100%;
+    padding: 10px;
     position: static;
     row-gap: 20px;
   }

@@ -1,17 +1,19 @@
 @import "./Variables.scss";
 
-@mixin backgroundGradient() {
-    background: linear-gradient(135deg, $gradient-white 0%, $gradient-blue 100%);
+@mixin buttonBackgroundGradient() {
+  background: linear-gradient(
+    135deg,
+    rgba(198, 128, 209, 1) 0%,
+    rgba(131, 83, 241, 1) 100%
+  );
 }
 @mixin boxShadow() {
-    box-shadow:  7px 7px 10px #cbcbcd,
-    -7px -7px 10px #ffffff;
-
+  box-shadow: 7px 7px 10px #cbcbcd, -7px -7px 10px #ffffff;
 }
 
 @mixin flexbox($direction, $jc-position, $ai-position) {
-    display: flex;
-    justify-content: $jc-position;
-    align-items: $ai-position;
-    flex-direction: $direction;
-  }
+  display: flex;
+  justify-content: $jc-position;
+  align-items: $ai-position;
+  flex-direction: $direction;
+}

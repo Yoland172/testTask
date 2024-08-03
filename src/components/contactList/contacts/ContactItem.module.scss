@@ -12,6 +12,7 @@
   background-color: $bakcground-white;
   border-radius: 12px;
   box-shadow: 7px 7px 7px #e0e0e3, -7px -7px 7px #ffffff;
+  z-index: 1;
 
   .imageContainer {
     grid-area: 1 / 1 / 2 / 3;
@@ -31,11 +32,21 @@
     .userNameContainer {
       @include flexbox(row, start, start);
       column-gap: 10px;
+      
+      &>h3{
+        transition: 250ms;
+        word-break: break-all;
+      }
+
+      &:hover>h3{
+        color: $accent-purple;
+      }
     }
 
     .userEmail {
       padding-top: 10px;
       font-weight: 500;
+      word-break: break-all;
     }
 
     .tagContainer {
@@ -59,6 +70,7 @@
       padding: 1px;
       background: linear-gradient(145deg, #ffffff, #dcdcde);
       box-shadow: 2px 2px 2px #cdcdcf, -2px -2px 2px #ffffff;
+      z-index: 10;
       transition: all 250ms;
 
       cursor: pointer;
@@ -88,9 +100,10 @@
   .main{
     padding: 20px 0;
 
-    .closeButtonContainer{
-      padding: 0;
+    .deleteButtonContainer{
+      padding:0;
       padding-right: 20px;
+      position: relative;
     }
   }
 
