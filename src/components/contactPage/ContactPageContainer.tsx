@@ -8,13 +8,14 @@ import { extractAndMergeTagsArray } from "../../lib/helper/contactInfoHelper";
 import { useEffect, useState } from "react";
 import { ContactItemType } from "../../lib/types/types";
 import { transformApiData } from "../../lib/helper/transformApiDataHelper";
+import { toast } from "react-toastify";
 
 const ContactPageContainer = () => {
   const [contactsState, setContactsState] = useState<ContactItemType[]>([]);
 
   const id = useParams().id;
-  const { data } = useGetContactInfoQuery(id ? id : "");
-  const [addTags, { isLoading }] = useAddTagsMutation();
+  const { data, isError: getError } = useGetContactInfoQuery(id ? id : "");
+  const [addTags, { isLoading, isError: addError }] = useAddTagsMutation();
 
   const handleAddTags = async (tagsArray: string[]) => {
     if (id && data?.resources[0].tags) {
@@ -24,6 +25,16 @@ const ContactPageContainer = () => {
       console.error("invalid id");
     }
   };
+
+  useEffect(() => {
+    if (getError || addError) {
+      toast.error("Server Error", {
+        position: "bottom-right",
+        className: "toast",
+        progressClassName: "toastPropgressBar",
+      });
+    }
+  }, [getError, addError]);
 
   useEffect(() => {
     if (data) {
