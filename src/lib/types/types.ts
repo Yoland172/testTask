@@ -29,6 +29,11 @@ export interface ResourcesItem {
     tags: TagItem[]
 }
 
+export interface IContactInfoAPI{
+    resources:ResourcesItem[]
+}
+
+
 export interface IContactAPI{
     meta:Meta,
     resources:ResourcesItem[]

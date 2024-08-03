@@ -32,7 +32,7 @@
       );
 
       color: $bakcground-white;
-      font-size: 1em;
+      font-size: 1.2em;
       font-weight: 400;
       box-shadow: 5px 5px 6px #cbcbcd, -5px -5px 6px #ffffff;
       transition: all 250ms;
@@ -43,7 +43,7 @@
       }
 
       &:active {
-        box-shadow: inset 6px 6px 4px #00000008, inset -6px -6px 4px #e292ee;
+        box-shadow: inset 6px 6px 4px #00000038, inset -6px -6px 4px #ffffff5b;
       }
     }
   }
