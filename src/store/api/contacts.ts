@@ -5,10 +5,9 @@ export const contactsApi = createApi({
   reducerPath: "contactsApi",
   tagTypes: ["Contacts"],
   baseQuery: fetchBaseQuery({
-    baseUrl:
-      "https://cors-anywhere.herokuapp.com/https://live.devnimble.com/api/v1/",
+    baseUrl: `${import.meta.env.VITE_BASE_URL}`,
     headers: {
-      Authorization: `Bearer VlP9cwH6cc7Kg2LsNPXpAvF6QNmgZn`,
+      Authorization: `${import.meta.env.VITE_TOKEN}`,
     },
   }),
   endpoints: (build) => ({
