@@ -6,7 +6,7 @@ interface InputFieldProps {
   type: string;
   placeholder?: string;
   error: FieldError | undefined;
-  maxLength: number;
+  maxLength?: number;
 }
 
 function InputField({

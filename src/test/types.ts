@@ -1,3 +1,0 @@
-interface testField {
-    testField:string
-}

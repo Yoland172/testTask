@@ -1,7 +1,6 @@
 import { useForm } from "react-hook-form";
 import styles from "./CreateContact.module.scss";
 import { CreateContactInputs } from "../../../lib/types/types";
-import { useEffect } from "react";
 import InputField from "../../ui/InputField/InputField";
 import Loader from "../../ui/loader/Loader";
 
@@ -11,10 +10,6 @@ interface CreateContactProps {
 }
 
 const CreateContact = ({ addContact, isLoading }: CreateContactProps) => {
-  useEffect(() => {
-    console.log(isLoading);
-  }, [isLoading]);
-
   const {
     register,
     handleSubmit,
