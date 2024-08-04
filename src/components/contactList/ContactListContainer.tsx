@@ -7,7 +7,7 @@ import {
 } from "../../store/api/contacts";
 import ContactList from "./ContactList";
 import { transformApiData } from "../../lib/helper/transformApiDataHelper";
-import { contactInfoCombiner } from "../../lib/helper/contactListHelpre";
+import { contactInfoCombiner } from "../../lib/helper/contactListHelper";
 import { toast } from "react-toastify";
 
 const ContactListContainer = () => {

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1722786455434" clover="3.2.0">
-  <project timestamp="1722786455434" name="All files">
+<coverage generated="1722799396978" clover="3.2.0">
+  <project timestamp="1722799396978" name="All files">
     <metrics statements="52" coveredstatements="50" conditionals="34" coveredconditionals="27" methods="19" coveredmethods="19" elements="105" coveredelements="96" complexity="0" loc="52" ncloc="52" packages="11" files="13" classes="13"/>
     <package name="components.contactList.contacts">
       <metrics statements="3" coveredstatements="3" conditionals="2" coveredconditionals="2" methods="2" coveredmethods="2"/>
@@ -102,7 +102,7 @@
         <line num="8" count="5" type="stmt"/>
         <line num="9" count="5" type="stmt"/>
       </file>
-      <file name="contactListHelpre.ts" path="C:\Users\axell\testTask\src\lib\helper\contactListHelpre.ts">
+      <file name="contactListHelper.ts" path="C:\Users\axell\testTask\src\lib\helper\contactListHelper.ts">
         <metrics statements="7" coveredstatements="7" conditionals="4" coveredconditionals="4" methods="1" coveredmethods="1"/>
         <line num="3" count="1" type="stmt"/>
         <line num="8" count="3" type="stmt"/>

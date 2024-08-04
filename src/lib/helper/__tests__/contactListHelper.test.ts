@@ -1,4 +1,4 @@
-import { contactInfoCombiner } from "../contactListHelpre";
+import { contactInfoCombiner } from "../contactListHelper";
 
 describe("contactInfoCombiner", () => {
   it("returns correct fields with both first name and last name provided", () => {
