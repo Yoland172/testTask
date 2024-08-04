@@ -1,0 +1,3 @@
+interface testField {
+    testField:string
+}
