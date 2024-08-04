@@ -11,7 +11,9 @@
   .tagContainer {
     display: flex;
     column-gap: 15px;
+    row-gap: 10px;
     padding-top: 20px;
+    flex-wrap: wrap
   }
 
   .tag {
@@ -30,6 +32,27 @@
       color: $bakcground-white;
       letter-spacing: .5px;
 
+    }
+  }
+}
+
+@media (max-width:1248px) {
+  .main{
+    padding-top: 20px;
+
+    &>h2{
+      font-size: 1.3em;
+    }
+
+    .tag{
+      padding: 8px;
+      & > p {
+        font-size: 0.8em;
+        font-weight: 500; 
+        color: $bakcground-white;
+        letter-spacing: .5px;
+  
+      }
     }
   }
 }

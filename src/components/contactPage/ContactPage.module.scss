@@ -13,9 +13,19 @@
     width: 100%;
     padding: 30px 40px;
     max-width: 1000px;
-    min-width: 400px;
+    min-width: 200px;
     height: fit-content;
     background-color: $bakcground-white;
     border-radius: 8px;
+  }
+}
+
+@media (max-width: 1248px) {
+  .main {
+    padding: 20px;
+    height: 100vh;
+    .userContainer {
+      padding: 20px;
+    }
   }
 }

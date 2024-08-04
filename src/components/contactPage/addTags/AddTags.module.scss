@@ -44,3 +44,15 @@
     }
   }
 }
+
+
+
+@media (max-width:1248px) {
+  .main {
+    padding-top: 20px;
+
+    & > textarea{
+      padding:15px;
+    }
+  }
+}

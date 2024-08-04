@@ -23,6 +23,7 @@ const AddTags = ({addTags,isLoading}:AddTagsProps) => {
       <textarea
         value={tags}
         onChange={(e) => setTags(e.target.value)}
+        placeholder="Some tags..."
       ></textarea>
       <div className={styles.buttonContainer}>
         <button onClick={onSubmit}>{isLoading ? <Loader/> : "Add Tags"}</button>
