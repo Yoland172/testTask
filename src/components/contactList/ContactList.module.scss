@@ -31,12 +31,14 @@
 @media (max-width:1248px) {
     .main {
         @include flexbox(column, start,center);
-        margin-top: 20px;
+        margin: 20px 20px;
+        margin-top: 20px ;
         column-gap: 0;
 
         .contactsContainer{
+            max-width: 600px;
+            width: 100%;
             margin-top: 35px;
-            width: 95%;
             padding: 10px;
 
             .contacts{

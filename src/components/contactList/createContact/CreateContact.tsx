@@ -6,16 +6,14 @@ import InputField from "../../ui/InputField/InputField";
 import Loader from "../../ui/loader/Loader";
 
 interface CreateContactProps {
-  addContact: (userInfo:CreateContactInputs) => void;
-  isLoading?:boolean
+  addContact: (userInfo: CreateContactInputs) => void;
+  isLoading?: boolean;
 }
 
-
-const CreateContact = ({addContact,isLoading}:CreateContactProps) => {
-
+const CreateContact = ({ addContact, isLoading }: CreateContactProps) => {
   useEffect(() => {
-    console.log(isLoading)
-  },[isLoading])
+    console.log(isLoading);
+  }, [isLoading]);
 
   const {
     register,
@@ -40,11 +38,10 @@ const CreateContact = ({addContact,isLoading}:CreateContactProps) => {
       clearErrors("firstName");
       clearErrors("lastName");
       addContact(data);
-      setValue("firstName", '', { shouldValidate: false });
-      setValue("lastName", '', { shouldValidate: false });
-      setValue("email", '', { shouldValidate: false });
-    }   
-
+      setValue("firstName", "", { shouldValidate: false });
+      setValue("lastName", "", { shouldValidate: false });
+      setValue("email", "", { shouldValidate: false });
+    }
   };
 
   return (
@@ -58,7 +55,7 @@ const CreateContact = ({addContact,isLoading}:CreateContactProps) => {
           type="text"
           error={errors.firstName}
           maxLength={100}
-          placeholder="Some..."
+          placeholder="What's first name?"
         />
       </div>
       <div className={styles.inputFiledContainer}>
@@ -68,7 +65,7 @@ const CreateContact = ({addContact,isLoading}:CreateContactProps) => {
           type="text"
           error={errors.lastName}
           maxLength={100}
-          placeholder="Some..."
+          placeholder="And last name?"
         />
       </div>
       <div className={styles.inputFiledContainer}>
@@ -84,11 +81,13 @@ const CreateContact = ({addContact,isLoading}:CreateContactProps) => {
           type="text"
           error={errors.email}
           maxLength={100}
-          placeholder="Some..."
+          placeholder="How about email?"
         />
       </div>
 
-      <button className={styles.submitButton} disabled={isLoading}>{isLoading ? <Loader/> : "Add Contact"}</button>
+      <button className={styles.submitButton} disabled={isLoading}>
+        {isLoading ? <Loader /> : "Add Contact"}
+      </button>
     </form>
   );
 };

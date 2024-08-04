@@ -28,7 +28,7 @@ const ContactPageContainer = () => {
 
   useEffect(() => {
     if (getError || addError) {
-      toast.error("Server Error", {
+      toast.error("Ooops something went wrong. We are putting of the fire 🔥", {
         position: "bottom-right",
         className: "toast",
         progressClassName: "toastPropgressBar",
