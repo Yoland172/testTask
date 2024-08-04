@@ -24,9 +24,9 @@ export interface Fields {
 
 export interface ResourcesItem {
   id: string;
-  avatar_url: string;
+  avatar_url?: string;
   fields: Fields;
-  tags: TagItem[];
+  tags: TagItem[] | [];
 }
 
 export interface CreateContactInputs {
@@ -41,7 +41,7 @@ export interface ContactItemType {
   email: string;
   firstName: string;
   lastName: string;
-  tags: TagItem[];
+  tags: TagItem[] | [];
 }
 
 export interface IContactInfoAPI {

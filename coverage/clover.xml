@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1722782027889" clover="3.2.0">
-  <project timestamp="1722782027889" name="All files">
-    <metrics statements="23" coveredstatements="21" conditionals="10" coveredconditionals="8" methods="8" coveredmethods="8" elements="41" coveredelements="37" complexity="0" loc="23" ncloc="23" packages="7" files="7" classes="7"/>
+<coverage generated="1722786455434" clover="3.2.0">
+  <project timestamp="1722786455434" name="All files">
+    <metrics statements="52" coveredstatements="50" conditionals="34" coveredconditionals="27" methods="19" coveredmethods="19" elements="105" coveredelements="96" complexity="0" loc="52" ncloc="52" packages="11" files="13" classes="13"/>
     <package name="components.contactList.contacts">
       <metrics statements="3" coveredstatements="3" conditionals="2" coveredconditionals="2" methods="2" coveredmethods="2"/>
       <file name="ContactItem.tsx" path="C:\Users\axell\testTask\src\components\contactList\contacts\ContactItem.tsx">
@@ -16,8 +16,8 @@
       <file name="CreateContact.tsx" path="C:\Users\axell\testTask\src\components\contactList\createContact\CreateContact.tsx">
         <metrics statements="13" coveredstatements="11" conditionals="6" coveredconditionals="4" methods="2" coveredmethods="2"/>
         <line num="12" count="1" type="stmt"/>
-        <line num="20" count="9" type="stmt"/>
-        <line num="22" count="9" type="stmt"/>
+        <line num="20" count="7" type="stmt"/>
+        <line num="22" count="7" type="stmt"/>
         <line num="23" count="1" type="cond" truecount="2" falsecount="2"/>
         <line num="24" count="0" type="stmt"/>
         <line num="28" count="0" type="stmt"/>
@@ -27,14 +27,46 @@
         <line num="36" count="1" type="stmt"/>
         <line num="37" count="1" type="stmt"/>
         <line num="38" count="1" type="stmt"/>
-        <line num="42" count="9" type="stmt"/>
+        <line num="42" count="7" type="stmt"/>
+      </file>
+    </package>
+    <package name="components.contactPage.addTags">
+      <metrics statements="9" coveredstatements="9" conditionals="4" coveredconditionals="2" methods="3" coveredmethods="3"/>
+      <file name="AddTags.tsx" path="C:\Users\axell\testTask\src\components\contactPage\addTags\AddTags.tsx">
+        <metrics statements="9" coveredstatements="9" conditionals="4" coveredconditionals="2" methods="3" coveredmethods="3"/>
+        <line num="10" count="1" type="stmt"/>
+        <line num="11" count="7" type="stmt"/>
+        <line num="13" count="7" type="stmt"/>
+        <line num="14" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="15" count="1" type="stmt"/>
+        <line num="16" count="1" type="stmt"/>
+        <line num="17" count="1" type="stmt"/>
+        <line num="21" count="7" type="stmt"/>
+        <line num="25" count="2" type="stmt"/>
+      </file>
+    </package>
+    <package name="components.contactPage.userInfo">
+      <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <file name="UserInfo.tsx" path="C:\Users\axell\testTask\src\components\contactPage\userInfo\UserInfo.tsx">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="9" count="1" type="stmt"/>
+        <line num="10" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="components.contactPage.userTags">
+      <metrics statements="3" coveredstatements="3" conditionals="2" coveredconditionals="2" methods="2" coveredmethods="2"/>
+      <file name="UserTags.tsx" path="C:\Users\axell\testTask\src\components\contactPage\userTags\UserTags.tsx">
+        <metrics statements="3" coveredstatements="3" conditionals="2" coveredconditionals="2" methods="2" coveredmethods="2"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="9" count="3" type="stmt"/>
+        <line num="14" count="2" type="stmt"/>
       </file>
     </package>
     <package name="components.ui.InputField">
       <metrics statements="1" coveredstatements="1" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
       <file name="InputField.tsx" path="C:\Users\axell\testTask\src\components\ui\InputField\InputField.tsx">
         <metrics statements="1" coveredstatements="1" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
-        <line num="19" count="30" type="stmt"/>
+        <line num="19" count="24" type="stmt"/>
       </file>
     </package>
     <package name="components.ui.icon">
@@ -49,7 +81,7 @@
       <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
       <file name="Loader.tsx" path="C:\Users\axell\testTask\src\components\ui\loader\Loader.tsx">
         <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-        <line num="3" count="2" type="stmt"/>
+        <line num="3" count="3" type="stmt"/>
         <line num="4" count="2" type="stmt"/>
       </file>
     </package>
@@ -59,6 +91,33 @@
         <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
         <line num="7" count="1" type="stmt"/>
         <line num="8" count="4" type="stmt"/>
+      </file>
+    </package>
+    <package name="lib.helper">
+      <metrics statements="15" coveredstatements="15" conditionals="18" coveredconditionals="15" methods="5" coveredmethods="5"/>
+      <file name="contactInfoHelper.ts" path="C:\Users\axell\testTask\src\lib\helper\contactInfoHelper.ts">
+        <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="7" count="5" type="stmt"/>
+        <line num="8" count="5" type="stmt"/>
+        <line num="9" count="5" type="stmt"/>
+      </file>
+      <file name="contactListHelpre.ts" path="C:\Users\axell\testTask\src\lib\helper\contactListHelpre.ts">
+        <metrics statements="7" coveredstatements="7" conditionals="4" coveredconditionals="4" methods="1" coveredmethods="1"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="8" count="3" type="stmt"/>
+        <line num="11" count="3" type="cond" truecount="2" falsecount="0"/>
+        <line num="12" count="2" type="stmt"/>
+        <line num="21" count="3" type="cond" truecount="2" falsecount="0"/>
+        <line num="22" count="2" type="stmt"/>
+        <line num="27" count="3" type="stmt"/>
+      </file>
+      <file name="transformApiDataHelper.ts" path="C:\Users\axell\testTask\src\lib\helper\transformApiDataHelper.ts">
+        <metrics statements="4" coveredstatements="4" conditionals="14" coveredconditionals="11" methods="2" coveredmethods="2"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="3" type="stmt"/>
+        <line num="5" count="3" type="cond" truecount="2" falsecount="0"/>
+        <line num="6" count="3" type="stmt"/>
       </file>
     </package>
     <package name="test">

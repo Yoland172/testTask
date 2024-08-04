@@ -5,5 +5,6 @@ export const extractAndMergeTagsArray = (
   newTags: string[]
 ) => {
   const extractedTags = oldTags.map((tag) => tag.tag);
-  return [...extractedTags, ...newTags];
+  const set = new Set ([...extractedTags, ...newTags]);
+  return Array.from(set);
 };

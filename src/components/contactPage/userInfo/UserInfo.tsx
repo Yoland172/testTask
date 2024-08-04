@@ -10,7 +10,7 @@ const UserInfo = ({avatar_url,email,firstName,lastName}:UserInfoProps) => {
   return (
     <div className={styles.main}>
         <div className={styles.imageContainer}>
-          <img src={avatar_url} alt="userAvata" />
+          <img src={avatar_url} alt="userAvatar" />
         </div>
         <div className={styles.userNameContainer}>
             <h1>{firstName}</h1>
